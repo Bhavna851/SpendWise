@@ -1,0 +1,327 @@
+
+/* 1. Global styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #263445;
+    background-color: #f3f6fb;
+}
+
+/* 2. Header */
+header {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 24px;
+}
+
+h1 {
+    margin: 0 0 6px;
+    color: #173b63;
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+h2 {
+    margin: 0 0 20px;
+    color: #173b63;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+h3 {
+    margin: 0 0 8px;
+    color: #245b83;
+    font-size: 18px;
+}
+
+p {
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+/* 3. Main content */
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section {
+    width: 100%;
+    margin: 0 auto 24px;
+    padding: 26px;
+    background-color: #ffffff;
+    border: 1px solid #e1e8f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(30, 55, 90, 0.06);
+}
+
+/* 4. Financial Summary cards */
+section:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+section:first-of-type > h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 2px;
+}
+
+section:first-of-type > div {
+    min-width: 0;
+    padding: 18px;
+    background-color: #f7faff;
+    border: 1px solid #e1eaf5;
+    border-radius: 10px;
+}
+
+section:first-of-type > div h3 {
+    margin-bottom: 8px;
+    color: #53677d;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+section:first-of-type > div p {
+    margin: 0;
+    color: #173b63;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* 5. Form labels */
+label {
+    display: inline-block;
+    margin: 8px 8px 6px 0;
+    color: #34465a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 6. Inputs and dropdowns */
+input,
+select {
+    max-width: 100%;
+    min-height: 42px;
+    padding: 9px 12px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #263445;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #bfdbfe;
+    outline-offset: 1px;
+    border-color: #3978c5;
+}
+
+/* 7. Buttons */
+button {
+    min-height: 40px;
+    margin: 6px 5px 6px 0;
+    padding: 9px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #245b83;
+    border: 1px solid #245b83;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #173b63;
+    border-color: #173b63;
+}
+
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+/* 8. Budget warnings */
+#monthly-budget-warning {
+    color: #b45309;
+    font-weight: 600;
+}
+
+section p {
+    font-size: 15px;
+}
+
+/* 9. Category budget cards */
+#category-budget-list > div {
+    margin: 14px 0;
+    padding: 16px 18px;
+    background-color: #f7faff;
+    border: 1px solid #e1e8f0;
+    border-radius: 10px;
+}
+
+#category-budget-list > div h3 {
+    margin-bottom: 8px;
+}
+
+#category-budget-list > div p {
+    margin: 6px 0;
+}
+
+hr {
+    margin: 18px 0;
+    border: 0;
+    border-top: 1px solid #e1e8f0;
+}
+
+/* 10. Transaction history cards */
+#transaction-list {
+    font-size: 15px;
+}
+
+#transaction-list > div {
+    margin-bottom: 14px;
+    padding: 16px 18px;
+    background-color: #f7faff;
+    border: 1px solid #e1e8f0;
+    border-radius: 10px;
+}
+
+#transaction-list > div p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+#transaction-list > div button {
+    min-height: 36px;
+    margin-top: 8px;
+    padding: 7px 14px;
+}
+
+/* 11. Spending chart */
+#expense-chart {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    max-height: 300px;
+    margin: 0 auto;
+}
+
+/* 12. Tablet layout */
+@media (min-width: 601px) and (max-width: 900px) {
+    body {
+        padding: 20px;
+    }
+
+    section {
+        padding: 22px;
+    }
+
+    section:first-of-type > div {
+        padding: 14px;
+    }
+
+    section:first-of-type > div p {
+        font-size: 21px;
+    }
+}
+
+/* 13. Mobile layout */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    h2 {
+        margin-bottom: 16px;
+        font-size: 21px;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    section {
+        margin-bottom: 16px;
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    section:first-of-type {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    section:first-of-type > h2 {
+        grid-column: 1;
+    }
+
+    section:first-of-type > div {
+        padding: 14px;
+    }
+
+    section:first-of-type > div p {
+        font-size: 22px;
+    }
+
+    label {
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+
+    button {
+        max-width: 100%;
+        min-height: 40px;
+        padding: 9px 12px;
+    }
+
+    #category-budget-list > div,
+    #transaction-list > div {
+        padding: 12px;
+    }
+
+    #expense-chart {
+        max-width: 100%;
+        max-height: 300px;
+    }
+}
+
+/* 14. Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}

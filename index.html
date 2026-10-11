@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise - Student Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>SpendWise</h1>
+        <p>Your money , made simple. </p>
+    </header>
+    
+
+
+    <main>
+        <section>
+            <h2>Financial Summary</h2>
+
+            <div>
+                <h3>Total Income</h3>
+                <p>₹<span id="total-income">0</span></p>
+            </div>
+
+            <div>
+                <h3>Total Expenses</h3>
+                <p>₹<span id="total-expenses">0</span></p>
+            </div>
+
+            <div>
+                <h3>Current Balance</h3>
+                <p>₹<span id="current-balance">0</span></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Monthly Budget</h2>
+
+            <label for="monthly-budget">Set Monthly Budget (₹):</label>
+            <input type="number" id="monthly-budget" min="1" placeholder="Enter your monthly budget">
+
+            <button id="save-budget">Save Budget</button>
+
+            <p>Monthly Budget: ₹<span id="budget-amount">0</span></p>
+
+            <p>Spent This Month: ₹<span id="budget-spent">0</span></p>
+
+            <p>Remaining Budget: ₹<span id="budget-remaining">0</span></p>
+
+            <p id="monthly-budget-warning"></p>
+        </section>
+
+        <section>
+            <h2>Category-wise Budgets</h2>
+
+            <div>
+                <label for="budget-category">Choose Category:</label>
+                <select id="budget-category">
+                    <option value="food">Food</option>
+                    <option value="transport">Transport</option>
+                    <option value="education">Education</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="category-budget-amount">
+                    Monthly Limit (₹):
+                </label>
+                <input type="number" id="category-budget-amount" min="1" placeholder="Enter category budget">
+            </div>
+
+            <button id="save-category-budget">Save Category Budget</button>
+
+            <div id="category-budget-list">
+                <p>No category budgets set yet.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Spending Analysis</h2>
+
+            <h3>Expenses by Category</h3>
+
+            <canvas id="expense-chart"></canvas>
+        </section>
+
+        <section>
+            <h2>Weekly and Monthly Summaries</h2>
+
+            <div>
+                <h3>This Week's Expenses</h3>
+                <p>₹<span id="weekly-expenses">0.00</span></p>
+                <p id="weekly-date-range"></p>
+            </div>
+
+            <div>
+                <h3>This Month's Expenses</h3>
+                <p>₹<span id="monthly-expenses">0.00</span></p>
+                <p id="monthly-date-range"></p>
+            </div>
+        </section>
+
+
+        <section>
+            <h2>Add a Transaction</h2>
+
+
+            <form id="transaction-form">
+
+                <label for="amount">Amount (₹)</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount" min="0.01" step="0.01"
+                    required>
+
+                <label for="type">Transaction Type</label>
+                <select id="type" name="type" required>
+                    <option value="">Select type</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="">Select category</option>
+                    <option value="food">Food</option>
+                    <option value="transport">Transport</option>
+                    <option value="education">Education</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" placeholder="e.g. Lunch, bus fare" required>
+
+                <button type="submit">Add Transaction</button>
+
+            </form>
+        </section>
+
+
+
+
+
+        <section>
+            <h2>Transaction History</h2>
+
+            <label for="transaction-filter">Filter Transactions:</label>
+
+            <select id="transaction-filter">
+                <option value="all">All Transactions</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+            </select>
+
+            <button type="button" id="export-csv">
+    Export Transactions to CSV
+</button>
+
+
+            <div id="transaction-list">
+                <p>No transactions added yet.</p>
+            </div>
+
+
+
+        </section>
+
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
